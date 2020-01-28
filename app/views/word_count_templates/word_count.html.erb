@@ -1,0 +1,44 @@
+<div>
+  <div>
+    Word count results
+  </div>
+
+  <div>
+    <dl>
+      <dt>
+        Text
+      </dt>
+      <dd>
+        <p><%= simple_format(@text) %></p>
+      </dd>
+
+      <dt>
+        Word Count
+      </dt>
+      <dd>
+        <%= @word_count %>
+      </dd>
+
+      <dt>
+        Character Count (with spaces)
+      </dt>
+      <dd>
+        <%= @character_count_with_spaces %>
+      </dd>
+
+      <dt>
+        Character Count (without spaces)
+      </dt>
+      <dd>
+        <%= @character_count_without_spaces %>
+      </dd>
+
+      <dt>
+        Occurrences of <code><%= @special_word %></code>
+      </dt>
+      <dd>
+        <%= @occurrences %>
+      </dd>
+    </dl>
+  </div>
+</div>

@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
-  devise_for :admin_users, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  get("/", { :controller => "word_count", :action => "word_count_form" })
+
+  get("/word-count/new",                  { :controller => "word_count", :action => "word_count_form" })
+  get("/word-count/results",              { :controller => "word_count", :action => "word_count" })
+
+  
+  # ================================================================================
+  # Write your routes above.
+  # ================================================================================
 end
