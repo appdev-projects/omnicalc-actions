@@ -16,10 +16,11 @@ class GeocodingController < ApplicationController
 
     api_key = ENV.fetch("GMAPS_KEY")
 
-    url = "https://maps.googleapis.com/maps/api/geocode/json?address=" + url_safe_street_address + "&key=" + api_key
+    url = "https://maps.googleapis.com/maps/api/geocode/json?address=" + sanitized_street_address + "&key=" + api_key
 
     data = HTTP.get(url)
-    location = data.fetch("results").at(0).fetch("geometry").fetch("location")
+    parsed_data = JSON.parse(data)
+    location = parsed_data.fetch("results").at(0).fetch("geometry").fetch("location")
     @latitude = location.fetch("lat")
 
     @longitude = location.fetch("lng")

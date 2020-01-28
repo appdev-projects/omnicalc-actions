@@ -63,6 +63,7 @@ end
 
 group :test do
   gem 'capybara'
+  gem "webmock"
   gem 'factory_bot_rails'
   gem 'rspec-rails'
   gem 'webmock'
