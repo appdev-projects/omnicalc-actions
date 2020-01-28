@@ -1,0 +1,37 @@
+<div>
+  <div>
+    New loan payment calculation
+  </div>
+
+  <div >
+    <form action="/loan-payment/results.html">
+      <div>
+        <label for="annual_percentage_rate">
+          APR
+        </label>
+
+        <input type="number" step="any" class="form-control" name="annual_percentage_rate" id="annual_percentage_rate" placeholder="Enter the APR of the loan (as a percent)">
+      </div>
+
+      <div>
+        <label for="number_of_years">
+          Years
+        </label>
+
+        <input type="number" min="1" class="form-control" name="number_of_years" id="number_of_years" placeholder="Enter the number of years to repay the loan">
+      </div>
+
+      <div>
+        <label for="principal_value">
+          Principal
+        </label>
+
+        <input type="number" min="1" class="form-control" name="principal_value" id="principal_value" placeholder="Enter the principal of the loan">
+      </div>
+
+      <button>
+        Calculate!
+      </button>
+    </form>
+  </div>
+</div>

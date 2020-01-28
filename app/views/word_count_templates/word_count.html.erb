@@ -3,42 +3,42 @@
     Word count results
   </div>
 
-  <div>
+  <div >
     <dl>
       <dt>
         Text
       </dt>
-      <dd>
+      <dd class="text">
         <p><%= simple_format(@text) %></p>
       </dd>
 
       <dt>
         Word Count
       </dt>
-      <dd>
+      <dd class="word_count">
         <%= @word_count %>
       </dd>
 
       <dt>
         Character Count (with spaces)
       </dt>
-      <dd>
+      <dd class="character_count_with_spaces">
         <%= @character_count_with_spaces %>
       </dd>
 
       <dt>
         Character Count (without spaces)
       </dt>
-      <dd>
+      <dd class="character_count_without_spaces">
         <%= @character_count_without_spaces %>
       </dd>
 
       <dt>
         Occurrences of <code><%= @special_word %></code>
       </dt>
-      <dd>
+      <dd class="occurrences">
         <%= @occurrences %>
       </dd>
     </dl>
-  </div>
+  </div> 
 </div>

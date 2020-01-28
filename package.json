@@ -1,5 +1,5 @@
 {
-  "name": "omnicalc_params",
+  "name": "omnicalc_actions",
   "private": true,
   "dependencies": {
     "@rails/activestorage": "^6.0.0",

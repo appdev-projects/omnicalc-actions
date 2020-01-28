@@ -76,3 +76,4 @@ end
 
 gem 'devise'
 gem 'activeadmin', '2.2.0'
+gem "http"

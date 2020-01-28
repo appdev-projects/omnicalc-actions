@@ -12,7 +12,7 @@ describe "/word-count/new" do
 
     click_button "Calculate!"
 
-    expect(page).to have_css(".text", text: "the first draft is just you telling yourself the story")
+    expect(page).to have_content("the first draft is just you telling yourself the story")
   end
 end
 
@@ -233,8 +233,8 @@ end
 describe "/time-between/new" do
   before do
     visit "/time-between/new"
-    fill_in "starting_time", with: "04/16/2015 4:00 PM"
-    fill_in "ending_time", with: "04/17/2015 4:02 PM"
+    fill_in "starting_time", with: Time.new(2015, 04, 16, 16)
+    fill_in "ending_time", with: Time.new(2015, 04, 17, 16, 2)
     click_button "Calculate!"
   end
 end
@@ -242,8 +242,8 @@ end
 describe "/time-between/new" do
   it "displays the starting time", points: 1 do
     visit "/time-between/new"
-    fill_in "starting_time", with: "04/16/2015 4:00 PM"
-    fill_in "ending_time", with: "04/17/2015 4:02 PM"
+    fill_in "starting_time", with: Time.new(2015, 04, 16, 16)
+    fill_in "ending_time", with: Time.new(2015, 04, 17, 16, 2)
     click_button "Calculate!"
 
     expect(page).to have_content "4:00pm"
@@ -254,8 +254,8 @@ end
 describe "/time-between/new" do
   it "displays the ending time", points: 1 do
     visit "/time-between/new"
-    fill_in "starting_time", with: "04/16/2015 4:00 PM"
-    fill_in "ending_time", with: "04/17/2015 4:02 PM"
+    fill_in "starting_time", with: Time.new(2015, 04, 16, 16)
+    fill_in "ending_time", with: Time.new(2015, 04, 17, 16, 2)
     click_button "Calculate!"
 
     expect(page).to have_content "4:02pm"
@@ -266,8 +266,8 @@ end
 describe "/time-between/new" do
   it "displays the seconds between", points: 18, hint: I18n.t("hints.nine") do
     visit "/time-between/new"
-    fill_in "starting_time", with: "04/16/2015 4:00 PM"
-    fill_in "ending_time", with: "04/17/2015 4:02 PM"
+    fill_in "starting_time", with: Time.new(2015, 04, 16, 16)
+    fill_in "ending_time", with: Time.new(2015, 04, 17, 16, 2)
     click_button "Calculate!"
 
     expect(page).to have_content "86520"
@@ -277,8 +277,8 @@ end
 describe "/time-between/new" do
   it "displays the minutes between", points: 3, hint: I18n.t("hints.ten") do
     visit "/time-between/new"
-    fill_in "starting_time", with: "04/16/2015 4:00 PM"
-    fill_in "ending_time", with: "04/17/2015 4:02 PM"
+    fill_in "starting_time", with: Time.new(2015, 04, 16, 16)
+    fill_in "ending_time", with: Time.new(2015, 04, 17, 16, 2)
     click_button "Calculate!"
 
     expect(page).to have_content "1442"
@@ -288,8 +288,8 @@ end
 describe "/time-between/new" do
   it "displays the hours between", points: 3 do
     visit "/time-between/new"
-    fill_in "starting_time", with: "04/16/2015 4:00 PM"
-    fill_in "ending_time", with: "04/17/2015 4:02 PM"
+    fill_in "starting_time", with: Time.new(2015, 04, 16, 16)
+    fill_in "ending_time", with: Time.new(2015, 04, 17, 16, 2)
     click_button "Calculate!"
 
     expect(page).to have_content "24.0333"
@@ -299,8 +299,8 @@ end
 describe "/time-between/new" do
   it "displays the days between", points: 3 do
     visit "/time-between/new"
-    fill_in "starting_time", with: "04/16/2015 4:00 PM"
-    fill_in "ending_time", with: "04/17/2015 4:02 PM"
+    fill_in "starting_time", with: Time.new(2015, 04, 16, 16)
+    fill_in "ending_time", with: Time.new(2015, 04, 17, 16, 2)
     click_button "Calculate!"
 
     expect(page).to have_content "1.0013"
@@ -310,8 +310,8 @@ end
 describe "/time-between/new" do
   it "displays the weeks between", points: 3 do
     visit "/time-between/new"
-    fill_in "starting_time", with: "04/16/2015 4:00 PM"
-    fill_in "ending_time", with: "04/17/2015 4:02 PM"
+    fill_in "starting_time", with: Time.new(2015, 04, 16, 16)
+    fill_in "ending_time", with: Time.new(2015, 04, 17, 16, 2)
     click_button "Calculate!"
 
     expect(page).to have_content "0.1430"
@@ -321,8 +321,8 @@ end
 describe "/time-between/new" do
   it "displays the years between", points: 3 do
     visit "/time-between/new"
-    fill_in "starting_time", with: "04/16/2015 4:00 PM"
-    fill_in "ending_time", with: "04/17/2015 4:02 PM"
+    fill_in "starting_time", with: Time.new(2015, 04, 16, 16)
+    fill_in "ending_time", with: Time.new(2015, 04, 17, 16, 2)
     click_button "Calculate!"
 
     expect(page).to have_content "0.0027"
